@@ -1,0 +1,10 @@
+10 print("test 1")
+20 print("test 2")
+30 x=30'
+40 print(x)
+50 _gosub=90
+60 x+=1
+70 if x<=40:_goto=40
+80 _stop
+90 print(11*x)
+99 _return
