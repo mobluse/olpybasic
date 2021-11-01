@@ -1,3 +1,4 @@
+#!/usr/bin/python3 -i
 _prog={}
 def _a(s):
     global _prog
