@@ -44,5 +44,5 @@ Please create issues if you have bug reports, suggestions for e.g. code improvem
 This should be very light weight, but also comfortable to use. 
 
 Planned changes: I will probably change the assignment to `_goto` and `_gosub` to using them as keywords and there will probably be a `_label` 
-keyword. C style `_for` loops might be implemented, by converting them to `if` with gotos. I might skip the prefix `_` for OLPyBASIC functions
-and variables -- consider the words without prefix reserved.
+keyword. C style `_for` loops might be implemented, by converting them to `if` with gotos like in Ratfor. I might skip the prefix `_` for OLPyBASIC functions
+and variables -- consider the words without prefix reserved!
