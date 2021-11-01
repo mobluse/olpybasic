@@ -8,7 +8,7 @@ def _d(n):
     global _prog
     del _prog[n]
 
-_trace=1
+_trace=0
 _lines=[]
 _returns=[]
 _goto=-1
