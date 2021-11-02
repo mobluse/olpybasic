@@ -1,6 +1,6 @@
-10 print("test 1")
-20 print("test 2")
-30 x=30'
+10 print("OLPyBASIC")
+20 print("MicroPython")
+30 x=30
 40 print(x)
 50 _gosub=90
 60 x+=1
