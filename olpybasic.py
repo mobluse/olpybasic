@@ -1,4 +1,9 @@
+#!/media/pi/Elements/micropython/ports/unix/micropython -i
+# ^ For locally compiled MicroPython
 #!/usr/bin/python3 -i
+# ^ Ordinary Python
+# from olpybasic import _a,_run,_l,_d,_tron,_troff # NumWorks graphing calculator
+
 _prog={}
 def _a(s):
     global _prog
@@ -18,7 +23,15 @@ _i=-1
 def _prtrace():
     global _trace, _i, _lines, _prog
     if _trace:
-        print('# ', _lines[_i], _prog[_lines[_i]])
+        print('#', _lines[_i], _prog[_lines[_i]])
+
+def _tron():
+    global _trace
+    _trace=1
+
+def _troff():
+    global _trace
+    _trace=0
 
 def _l():
     global _lines, _prog
