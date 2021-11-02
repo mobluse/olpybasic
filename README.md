@@ -17,8 +17,8 @@ To start:
 
 Paste:
 
-    _a('10 print("test 1")') # _a is short for add or append.
-    _a('20 print("test 2")')
+    _a('10 print("OLPyBASIC")') # _a is short for add or append.
+    _a('20 print("MicroPython")')
     _a('30 x=30')
     _a('40 print(x)')
     _a('50 _gosub=90')
@@ -36,10 +36,10 @@ Enter:
     _l()
     _a('60 x+=2') # add
     _l()
-    _run()
     _tron() # trace on
     _run()
     _troff() # trace off
+    _run()
 
 Please create issues if you have bug reports, suggestions for e.g. code improvement (I'm a Python/MicroPython beginner), or feature requests. 
 This should be very light weight, but also comfortable to use. 
