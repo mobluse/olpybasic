@@ -11,9 +11,9 @@ try to figure out how to remove the gotos, or leave them in, if your customer ac
 
 To start:
 
-    python3 -i olpybasic.py # Next line is alternative if you have MicroPython in Linux or Unix.
+    python3 -i olpybasic.py # Next line is an alternative if you have MicroPython in Linux or Unix.
     ~/micropython/ports/unix/micropython -i olpybasic.py # Next line is for NumWorks calculator.
-    from olpybasic import _a,_run,_l,_d # Trace doesn't work on NumWorks.
+    from olpybasic import _a,_run,_l,_d,_tron,_troff # Trace doesn't work on NumWorks.
 
 Paste:
 
