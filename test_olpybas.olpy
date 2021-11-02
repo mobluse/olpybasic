@@ -1,10 +1,10 @@
 10 print("OLPyBASIC")
-20 print("MicroPython")
+20 print("uPython")
 30 x=30
 40 print(x)
-50 _gosub=90
-60 x+=1
-70 if x<=40:_goto=40
-80 _stop
+45 gosub(90)
+50 x+=1
+60 if x<=40:goto(40)
+70 stop()
 90 print(11*x)
-99 _return
+99 ret()
