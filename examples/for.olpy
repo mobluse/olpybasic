@@ -1,0 +1,8 @@
+2 print("\033[H\033[J",end="") # CLS
+5 # for (n=0; n<=100; n+=8) # FOR N=0 TO 100 STEP 8
+10 n=0
+20 if not n<=100:goto(60)
+30 print(n,end=" ")
+40 n+=8
+50 goto(20)
+60 pass

@@ -1,8 +1,0 @@
-2 print("\x1B[2J\x1B[H",end="") # CLS
-5 # for (n=1;n<=100;++n) # FOR N=1 TO 100
-10 n=1
-20 if not n<=100:goto(60)
-30 print(n,end=" ")
-40 n+=1
-50 goto(20)
-60 pass
