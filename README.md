@@ -52,12 +52,12 @@ This should be very light weight, but also comfortable to use.
 Planned changes: There will probably be a label mechanism for `goto` as in C or COMAL. `for` loops might be implemented, by converting them 
 to `if` with `goto`s like in Ratfor.
 
-https://my.numworks.com/python/mobluse/olpybasic
-https://my.numworks.com/python/mobluse/test_olpybas
-https://my.numworks.com/simulators/zzpnwo
+Run OLPyBASIC online in browser:
+https://my.numworks.com/python/mobluse/olpybasic  
+https://my.numworks.com/python/mobluse/test_olpybas  
+https://my.numworks.com/simulators/zzpnwo (Doesn't work now, but the [issue](https://github.com/numworks/epsilon/issues/1896) is reported.)
 
-[New Reddit](https://www.reddit.com/r/numworks/comments/qlk3z6/olpybasic_python_with_line_numbers_ordered_list/?utm_source=share&utm_medium=web2x&context=3)
-
+[New Reddit](https://www.reddit.com/r/numworks/comments/qlk3z6/olpybasic_python_with_line_numbers_ordered_list/?utm_source=share&utm_medium=web2x&context=3)  
 [Reddit](https://www.reddit.com/r/numworks/comments/qlk3z6/olpybasic_python_with_line_numbers_ordered_list/?ref=share&ref_source=link)
 
-
+The editor is inspired by [ZX Forth Editor Manual](https://worldofspectrum.org//pub/sinclair/games-info/s/SpectrumForth(EditorUserManual).pdf).
