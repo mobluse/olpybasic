@@ -27,7 +27,7 @@ Example input (no need to input comments after #):
     P('50 x+=1')
     P('60 if x<=40:goto(40)')
     run()
-    pmod() # pmod is short for paste mode
+    PM() # PM is short for paste mode
     70 stop()
     90 print(11*x)
     99 ret()
