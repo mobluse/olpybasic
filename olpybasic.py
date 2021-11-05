@@ -4,6 +4,9 @@
 # ^ For my locally compiled MicroPython
 # from olpybasic import * # < NumWorks graphing calculator
 
+# OLPyBASIC https://github.com/mobluse/olpybasic
+from math import *
+from random import *
 _prog={}
 _pad={}
 
@@ -12,7 +15,7 @@ def P(s):
   i=s.index(' ')
   _prog[int(s[:i])]=s[i+1:]
 
-def pmod():
+def PM():
   while True:
     s=input()
     if len(s)==0:
@@ -32,10 +35,11 @@ def clear():
 
 def new():
   global _prog,_pad
-  _pad.clear()
-  for i in _prog:
-    _pad[i]=_prog[i]
-  _prog.clear()
+  if _prog!={}:
+    _pad.clear()
+    for i in _prog:
+      _pad[i]=_prog[i]
+    _prog.clear()
   _sort_prog()
   clear()
 
