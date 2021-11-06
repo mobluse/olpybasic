@@ -29,12 +29,11 @@ def D(n):
   del _prog[n]
 
 def clear():
-  global _running,_stop,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,å,ä,ö,é,ü
-  a=b=c=d=e=f=g=h=i=j=k=l=m=n=o=p=q=r=s=t=u=v=w=x=y=z=å=ä=ö=é=ü=0
-  _running=_stop=False
+  global a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+  a=b=c=d=e=f=g=h=i=j=k=l=m=n=o=p=q=r=s=t=u=v=w=x=y=z=0
 
 def new():
-  global _prog,_pad
+  global _prog,_pad,_running
   if _prog!={}:
     _pad.clear()
     for i in _prog:
@@ -42,6 +41,7 @@ def new():
     _prog.clear()
   _sort_prog()
   clear()
+  stop()
 
 def R(n=-1):
   global _prog,_pad
@@ -54,12 +54,12 @@ def R(n=-1):
 
 _trace=False
 _lines=[]
+_labels={}
 _returns=[]
 _goto=-1
 _gosub=-1
 _i=-1
 _running=False
-_stop=False
 
 def _prtrace():
   global _trace,_i,_lines,_prog
@@ -74,14 +74,22 @@ def troff():
   global _trace
   _trace=False
 
+def _buffer_labels():
+  global _lines,_prog,_labels
+  _labels.clear()
+  for i in range(len(_lines)):
+    if _prog[_lines[i]][:4]=='lbl(':
+      _labels[_prog[_lines[i]][5:-2]]=_lines[i]
+
 def _sort_prog():
   global _lines,_prog
   del _lines[:]
   _lines.extend(list(_prog))
   _lines.sort()
+  _buffer_labels()
 
 def L(n=-1):
-  global _lines, _prog
+  global _lines,_prog
   _sort_prog()
   if n==-1:
     for i in range(len(_lines)):
@@ -97,18 +105,24 @@ def run():
   clear()
   goto(_lines[0])
 
+def lbl(n):
+  pass
+
 def goto(n):
-  global _i,_lines,_running,_goto
+  global _i,_lines,_labels,_running,_goto
+  if type(n)!=int:
+    n=_labels[n]
   if _running:
     _goto=n
   else:
     _sort_prog()
     _i=_lines.index(n)
-    _i-=1
     cont()
 
 def gosub(n):
   global _gosub
+  if type(n)!=int:
+    n=_labels[n]
   _gosub=n
 
 def ret():
@@ -116,18 +130,16 @@ def ret():
   _i=_returns.pop()
 
 def stop():
-  global _stop
-  _stop=True
+  global _running
+  _running=False
 
 def cont():
-  global _i,_lines,_prog,_goto,_gosub,_returns,_running,_stop
+  global _i,_lines,_prog,_goto,_gosub,_returns,_running
   _running=True
   _sort_prog()
-  _i+=1
   while _i<len(_lines):
     _prtrace()
-    if _stop:
-      _stop=False
+    if not _running:
       break
     exec(_prog[_lines[_i]], globals())
     if _goto>-1 or _gosub>-1:
