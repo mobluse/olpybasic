@@ -1,0 +1,12 @@
+10 print("OLPyBASIC")
+20 print("uPython")
+30 x=30
+40 lbl("loop")
+42 print(x)
+45 gosub("my_sub")
+50 x+=1
+60 if x<=40:goto("loop")
+70 stop()
+90 lbl("my_sub")
+95 print(11*x)
+99 ret()
