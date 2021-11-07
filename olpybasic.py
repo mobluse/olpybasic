@@ -5,8 +5,8 @@
 # from olpybasic import * # < NumWorks graphing calculator
 
 # OLPyBASIC https://github.com/mobluse/olpybasic
-from math import *
-from random import *
+#from math import *
+#from random import *
 _prog={}
 _pad={}
 
@@ -18,7 +18,7 @@ def P(s):
 def PM():
   while True:
     s=input()
-    if len(s)==0:
+    if not s:
       break
     P(s)
 
@@ -34,7 +34,7 @@ def clear():
 
 def new():
   global _prog,_pad,_running
-  if _prog!={}:
+  if _prog:
     _pad.clear()
     for i in _prog:
       _pad[i]=_prog[i]
@@ -45,11 +45,12 @@ def new():
 
 def R(n=-1):
   global _prog,_pad
-  m=min(list(_pad))
-  for i in _pad:
-    if n==-1:
+  if n==-1:
+    for i in _pad:
       _prog[i]=_pad[i]
-    else:
+  else:
+    m=min(list(_pad))
+    for i in _pad:
       _prog[n+i-m]=_pad[i]
 
 _trace=False
