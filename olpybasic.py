@@ -84,8 +84,8 @@ def _buffer_labels():
 
 def _sort_prog():
   global _lines,_prog
-  del _lines[:]
-  _lines.extend(list(_prog))
+  del _lines
+  _lines=list(_prog)
   _lines.sort()
   _buffer_labels()
 
@@ -101,7 +101,7 @@ def L(n=-1):
 
 def run():
   global _lines,_returns
-  del _returns[:]
+  _returns.clear()
   _sort_prog()
   clear()
   goto(_lines[0])
