@@ -7,7 +7,8 @@ For each numbered line it uses Python's `exec()` function. That means it's compa
 *OLPyBASIC* has the advantage that you can have tutorials where you add lines to the program. It will also be easy to implement 
 single stepping and continue after stop. Another advantage is that you can run spaghetti code in Python. This means that you 
 can easily convert old BASIC programs to run in a modern programming language that normally lacks goto. This buys you time while you 
-try to figure out how to remove the gotos, or leave them in, if your customer accepts that. Gosubs are easy to replace with functions.
+try to figure out how to remove the gotos, or leave them in, if your customer accepts that. Labels are supported
+using e.g. `lbl("ex")` and `goto("ex")`, see the examples folder.
 
 To start:
 
@@ -46,11 +47,10 @@ Enter:
     troff() # trace off
     run()
 
-Please create issues if you have bug reports, suggestions for e.g. code improvement (I'm a Python/MicroPython beginner), or feature requests. 
+Please create issues if you have bug reports, suggestions for e.g. code improvements (I'm a Python/MicroPython beginner), or feature requests. 
 This should be very light weight, but also comfortable to use. 
 
-Planned changes: There will probably be a label mechanism for `goto` as in C or COMAL. `for` loops might be implemented, by converting them 
-to `if` with `goto`s like in Ratfor.
+Planned changes: `for` loops might be implemented, by converting them to `if` with `goto`s like in Ratfor.
 
 Run OLPyBASIC online in browser:
 https://my.numworks.com/python/mobluse/olpybasic  
