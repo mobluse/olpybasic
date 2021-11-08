@@ -5,8 +5,8 @@
 # from olpybasic import * # < NumWorks graphing calculator
 
 # OLPyBASIC https://github.com/mobluse/olpybasic
-#from math import *
-#from random import *
+from math import *
+from random import *
 _prog={}
 _pad={}
 
